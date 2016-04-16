@@ -1,0 +1,43 @@
+*:before,
+*:after,
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+  transition: .25s ease-in-out;
+}
+
+.toggle-timer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  border: 0;
+  outline: none;
+  background-color: #c00;
+  color: #fff;
+  height: 100px;
+  width: 100px;
+  font-family: 'Helvetica Neue Light', sans-serif;
+  font-weight: 200;
+  font-size: 14pt;
+  border-radius: 50%;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.toggle-timer.busy {
+  background-color: #fff;
+  color: #c00;
+}
