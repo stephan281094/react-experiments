@@ -33,7 +33,14 @@ window.onload = function () {
     }
   }
 
-  toggleButton.addEventListener('click', function (event) {
+  toggleButton.addEventListener('click', toggleTimer)
+  body.addEventListener('keydown', function (event) {
+    if (event.keyCode === 32) {
+      toggleTimer()
+    }
+  })
+
+  function toggleTimer () {
     if (busy) {
       clearInterval(timerInterval)
       timer.time = 0
@@ -53,7 +60,7 @@ window.onload = function () {
     toggleButton.classList.toggle('busy')
     time.classList.toggle('busy')
     busy = !busy
-  })
+  }
 
   function drawTimer (t) {
     time.innerHTML = t || timer.time
