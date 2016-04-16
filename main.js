@@ -16,22 +16,46 @@ var sound = {
 
 window.onload = function () {
   var toggleButton = document.querySelector('.toggle-timer')
+  var time = document.querySelector('.time')
   var body = document.querySelector('body')
   var busy = false
-  var timer;
+  var timerInterval;
+
+  var timer = {
+    time: 0,
+    update: function () {
+      this.time++
+
+      if (this.time === 60) {
+        sound.play()
+        this.time = 0
+      }
+    }
+  }
 
   toggleButton.addEventListener('click', function (event) {
     if (busy) {
-      clearInterval(timer)
+      clearInterval(timerInterval)
+      timer.time = 0
+      drawTimer()
+
       toggleButton.innerHTML = 'Start'
       body.style.backgroundColor = '#fff'
     } else {
-      timer = setInterval(sound.play, 60000)
+      timerInterval = setInterval(function () {
+        timer.update()
+        drawTimer()
+      }, 1000)
       toggleButton.innerHTML = 'Stop'
       body.style.backgroundColor = '#c00'
     }
 
     toggleButton.classList.toggle('busy')
+    time.classList.toggle('busy')
     busy = !busy
   })
+
+  function drawTimer (t) {
+    time.innerHTML = t || timer.time
+  }
 }

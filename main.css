@@ -16,20 +16,40 @@ body {
   transition: .25s ease-in-out;
 }
 
+h1,
 .toggle-timer {
+  font-family: 'Helvetica Neue Light', sans-serif;
+  font-weight: 200;
+}
+
+.time {
+  color: #000;
+}
+
+.time.busy {
+  color: #fff;
+}
+
+h1 {
+  font-size: 50pt;
+}
+
+.wrap {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
+  text-align: center;
+}
+
+.toggle-timer {
   border: 0;
   outline: none;
   background-color: #c00;
   color: #fff;
   height: 100px;
   width: 100px;
-  font-family: 'Helvetica Neue Light', sans-serif;
-  font-weight: 200;
   font-size: 14pt;
   border-radius: 50%;
   text-transform: uppercase;
