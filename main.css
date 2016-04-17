@@ -11,27 +11,9 @@ body {
   margin: 0;
 }
 
-body {
-  background-color: #fff;
-  transition: .25s ease-in-out;
-}
-
-h1,
-.toggle-timer {
-  font-family: 'Helvetica Neue Light', sans-serif;
-  font-weight: 200;
-}
-
-.time {
-  color: #000;
-}
-
-.time.busy {
-  color: #fff;
-}
-
-h1 {
-  font-size: 50pt;
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 .wrap {
@@ -43,7 +25,34 @@ h1 {
   text-align: center;
 }
 
-.toggle-timer {
+.timer {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: transparent;
+  transition: .25s ease-in-out;
+}
+
+.timer.on {
+  background-color: #c00;
+}
+
+.timer-button,
+.timer-counter {
+  font-family: 'Helvetica Neue Light', sans-serif;
+  font-weight: 200;
+}
+
+.timer-counter {
+  color: #000;
+  font-size: 50pt;
+}
+
+.timer-counter.on {
+  color: #fff;
+}
+
+.timer-button {
   border: 0;
   outline: none;
   background-color: #c00;
@@ -57,7 +66,7 @@ h1 {
   cursor: pointer;
 }
 
-.toggle-timer.busy {
+.timer-button.on {
   background-color: #fff;
   color: #c00;
 }
