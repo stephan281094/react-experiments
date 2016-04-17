@@ -1,7 +1,15 @@
 // Constants
+export const TIMER_RESET = 'TIMER_RESET'
 export const TIMER_START = 'TIMER_START'
 export const TIMER_STOP = 'TIMER_STOP'
 export const TIMER_TICK = 'TIMER_TICK'
+
+// Actions
+export function resetTimer () {
+  return {
+    type: TIMER_RESET
+  }
+}
 
 // Action thunks
 export function startTimer () {

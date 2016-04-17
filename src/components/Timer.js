@@ -5,12 +5,21 @@ import { bindActionCreators } from 'redux'
 import Sound from '../lib/Sound'
 import Button from './timer/Button'
 import Counter from './timer/Counter'
-import { startTimer, stopTimer } from '../actions/timer'
+import { startTimer, stopTimer, resetTimer } from '../actions/timer'
 
 class Timer extends Component {
   constructor () {
     super()
     this.sound = new Sound();
+  }
+
+  componentDidUpdate () {
+    const { counter, resetTimer } = this.props
+
+    if (counter === 60) {
+      this.sound.play()
+      resetTimer()
+    }
   }
 
   toggleTimer () {
@@ -38,7 +47,8 @@ class Timer extends Component {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     startTimer,
-    stopTimer
+    stopTimer,
+    resetTimer
   }, dispatch)
 }
 
