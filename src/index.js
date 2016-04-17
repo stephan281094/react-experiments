@@ -1,18 +1,4 @@
-var context = new (window.AudioContext || window.webkitAudioContext)()
-
-var sound = {
-  play: function (seconds) {
-    seconds = seconds || 0.5
-    var currentTime = context.currentTime
-    var oscillator = context.createOscillator()
-    oscillator.connect(context.destination)
-
-    oscillator.type = 'sine'
-    oscillator.frequency.value = 1200
-    oscillator.start(currentTime)
-    oscillator.stop(currentTime + seconds)
-  }
-}
+import Sound from './sound'
 
 window.onload = function () {
   var toggleButton = document.querySelector('.toggle-timer')
@@ -21,12 +7,14 @@ window.onload = function () {
   var busy = false
   var timerInterval;
 
+  var sound = new Sound()
+
   var timer = {
     time: 0,
     update: function () {
       this.time++
 
-      if (this.time === 60) {
+      if (this.time === 5) {
         sound.play()
         this.time = 0
       }
