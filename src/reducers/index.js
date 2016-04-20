@@ -1,34 +1,8 @@
-import { TIMER_TICK, TIMER_RESET, TIMER_START, TIMER_STOP } from '../actions/timer'
+import { combineReducers } from 'redux'
+import timerReducer from './timer'
 
-const initialState = {
-  on: false,
-  counter: 0
-}
-
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case TIMER_TICK:
-      return Object.assign({}, state, {
-        counter: state.counter + 1
-      })
-    case TIMER_RESET:
-      return Object.assign({}, state, {
-        counter: 0
-      })
-    case TIMER_START:
-      return Object.assign({}, state, {
-        on: true,
-        timerId: action.timerId
-      })
-    case TIMER_STOP:
-      return Object.assign({}, state, {
-        on: false,
-        counter: 0,
-        timerId: action.timerId
-      })
-    default:
-      return state
-  }
-}
+const rootReducer = combineReducers({
+  timer: timerReducer
+})
 
 export default rootReducer

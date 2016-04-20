@@ -14,7 +14,7 @@ export function resetTimer () {
 // Action thunks
 export function startTimer () {
   return (dispatch, getState) => {
-    const { timerId } = getState()
+    const { timerId } = getState().timer
     if (!timerId) {
       const timerId = setInterval(() => {
         dispatch({
@@ -31,7 +31,7 @@ export function startTimer () {
 
 export function stopTimer () {
   return (dispatch, getState) => {
-    const { timerId } = getState()
+    const { timerId } = getState().timer
     if (timerId) {
       clearInterval(timerId)
       dispatch({

@@ -54,8 +54,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    on: state.on,
-    counter: state.counter
+    on: state.timer.on,
+    counter: state.timer.counter
   }
 }
 
