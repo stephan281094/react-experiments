@@ -9,12 +9,22 @@ class Header extends Component {
   }
 
   render () {
+    const { activeView } = this.props
+
     return (
       <header className='header'>
-        <button key='vsti' onClick={() => {this.setActive('vsti')}}>VSTi</button>
-        <button key='timer' onClick={() => {this.setActive('timer')}}>Timer</button>
+        <button className={'nav-item' + (activeView === 'timer' ? ' active' : '') }
+          key='timer' onClick={() => {this.setActive('timer')}}>Timer</button>
+        <button className={'nav-item' + (activeView === 'vsti' ? ' active' : '') }
+          key='vsti' onClick={() => {this.setActive('vsti')}}>VSTi</button>
       </header>
     )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    activeView: state.global.activeView
   }
 }
 
@@ -24,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
