@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk'
 import Header from './components/Header'
-import Timer from './components/Timer'
+import Main from './components/Main'
 import reducers from './reducers'
 
 const logger = createLogger()
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className='main'>
         <Header store={store} />
-        <Timer store={store} />
+        <Main store={store} />
       </div>
     )
   }
