@@ -40,6 +40,7 @@ body {
 }
 
 .header .nav-item {
+  position: relative;
   background-color: #fff;
   border: 0;
   outline: 0;
