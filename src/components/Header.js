@@ -16,11 +16,11 @@ class Header extends Component {
       <header className='header'>
         <button className={'nav-item' + (activeView === 'timer' ? ' active' : '') }
           key='timer' onClick={() => {this.setActive('timer')}}>
-          <Ink background={false} opacity={0.2} /> Timer
+          <Ink opacity={0.2} /> Timer
         </button>
         <button className={'nav-item' + (activeView === 'vsti' ? ' active' : '') }
           key='vsti' onClick={() => {this.setActive('vsti')}}>
-          <Ink background={false} opacity={0.2} /> VSTi
+          <Ink opacity={0.2} /> VSTi
         </button>
       </header>
     )
