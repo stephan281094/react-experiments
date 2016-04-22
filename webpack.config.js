@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-module-source-map',
   entry: entry,
   output: {
     path: path.join(__dirname, 'dist'),
@@ -18,7 +18,12 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ],
   module: {
     loaders: [{
