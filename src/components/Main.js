@@ -2,16 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Timer from './Timer'
 import Vsti from './Vsti'
+import Flickr from './Flickr'
 
 class Main extends Component {
   render () {
     const { activeView, store } = this.props
-    let view
 
-    view = activeView === 'vsti' ?
-      <Vsti store={store} /> : <Timer store={store } />
-
-    return view
+    switch (activeView) {
+      case 'vsti':
+        return <Vsti store={store} />
+      case 'timer':
+        return <Timer store={store} />
+      case 'flickr':
+        return <Flickr store={store} />
+      default:
+        return <Vsti store={store} />
+    }
   }
 }
 

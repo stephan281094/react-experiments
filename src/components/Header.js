@@ -22,6 +22,10 @@ class Header extends Component {
           key='vsti' onClick={() => {this.setActive('vsti')}}>
           <Ink opacity={0.2} /> VSTi
         </button>
+        <button className={'nav-item' + (activeView === 'flickr' ? ' active' : '') }
+          key='flickr' onClick={() => {this.setActive('flickr')}}>
+          <Ink opacity={0.2} /> Flickr
+        </button>
       </header>
     )
   }
