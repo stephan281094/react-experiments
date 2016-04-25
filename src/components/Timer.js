@@ -10,7 +10,7 @@ import { startTimer, stopTimer, resetTimer } from '../actions/timer'
 class Timer extends Component {
   constructor () {
     super()
-    this.sound = new Sound();
+    this.sound = new Sound()
   }
 
   componentDidUpdate () {

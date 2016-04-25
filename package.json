@@ -8,7 +8,7 @@
     "build": "build:dev && build:prod",
     "build:dev": "webpack",
     "build:prod": "NODE_ENV=production webpack -p",
-    "lint": "standard src"
+    "lint": "standard src/**/*.js"
   },
   "repository": {
     "type": "git",

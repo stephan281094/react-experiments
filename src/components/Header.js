@@ -14,16 +14,16 @@ class Header extends Component {
 
     return (
       <header className='header'>
-        <button className={'nav-item' + (activeView === 'timer' ? ' active' : '') }
-          key='timer' onClick={() => {this.setActive('timer')}}>
+        <button className={'nav-item' + (activeView === 'timer' ? ' active' : '')}
+          key='timer' onClick={() => { this.setActive('timer') }}>
           <Ink opacity={0.2} /> Timer
         </button>
-        <button className={'nav-item' + (activeView === 'vsti' ? ' active' : '') }
-          key='vsti' onClick={() => {this.setActive('vsti')}}>
+        <button className={'nav-item' + (activeView === 'vsti' ? ' active' : '')}
+          key='vsti' onClick={() => { this.setActive('vsti') }}>
           <Ink opacity={0.2} /> VSTi
         </button>
-        <button className={'nav-item' + (activeView === 'flickr' ? ' active' : '') }
-          key='flickr' onClick={() => {this.setActive('flickr')}}>
+        <button className={'nav-item' + (activeView === 'flickr' ? ' active' : '')}
+          key='flickr' onClick={() => { this.setActive('flickr') }}>
           <Ink opacity={0.2} /> Flickr
         </button>
       </header>
