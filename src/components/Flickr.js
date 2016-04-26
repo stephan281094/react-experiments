@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 import justifiedLayout from 'justified-layout'
 import Dummy from './flickr/Dummy'
 
@@ -10,10 +11,9 @@ class Vsti extends Component {
       return <Dummy style={{top: box.top, width: box.width, height: box.height, left: box.left}} />
     })
 
-    console.log(boxes)
-
     return (
       <div style={{position: 'relative', margin: '0 auto', width: 1060}}>
+        <Helmet title='Flickr' />
         <h1>Flickr page</h1>
         <div style={{position: 'relative'}}>
           {boxes}

@@ -9,8 +9,6 @@ class Main extends Component {
     const { activeView, store } = this.props
 
     switch (activeView) {
-      case 'vsti':
-        return <Vsti store={store} />
       case 'timer':
         return <Timer store={store} />
       case 'flickr':

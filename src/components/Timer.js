@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -35,6 +36,7 @@ class Timer extends Component {
   render () {
     return (
       <div className={'timer' + (this.props.on ? ' on' : '')}>
+        <Helmet title='Timer' />
         <div className='wrap'>
           <Counter on={this.props.on} value={this.props.counter} />
           <Button on={this.props.on} onClick={this.toggleTimer.bind(this)} />
