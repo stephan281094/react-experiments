@@ -7,8 +7,15 @@ class Flickr extends Component {
   render () {
     let layoutGeometry = justifiedLayout([0.5, 1.5, 1, 1.8, 0.4, 0.7, 0.9, 1.1, 1.7, 2, 2.1])
 
-    const boxes = layoutGeometry.boxes.map((box) => {
-      return <Dummy style={{top: box.top, width: box.width, height: box.height, left: box.left}} />
+    const boxes = layoutGeometry.boxes.map((box, i) => {
+      let style = {
+        top: box.top,
+        width: box.width,
+        height: box.height,
+        left: box.left,
+        background: `url(img/${i + 1}.jpg) center center`
+      }
+      return <Dummy style={style} />
     })
 
     return (

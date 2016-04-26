@@ -5,8 +5,7 @@ class Dummy extends Component {
     let style = Object.assign({}, {
       position: 'absolute',
       backgroundColor: '#f0f0f0',
-      display: 'block',
-      border: '1px solid #c00'
+      display: 'block'
     }, this.props.style)
 
     return (
