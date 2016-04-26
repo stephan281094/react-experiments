@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import justifiedLayout from 'justified-layout'
 import Dummy from './flickr/Dummy'
+import images from '../fixtures/images'
 
 class Flickr extends Component {
   render () {
-    let layoutGeometry = justifiedLayout([0.5, 1.5, 1, 1.8, 0.4, 0.7, 0.9, 1.1, 1.7, 2, 2.1])
+    let aspectRatios = images.map((image) => {
+      return image.ratio
+    })
+    let layoutGeometry = justifiedLayout(aspectRatios)
 
     const boxes = layoutGeometry.boxes.map((box, i) => {
       let style = {
@@ -13,7 +17,8 @@ class Flickr extends Component {
         width: box.width,
         height: box.height,
         left: box.left,
-        background: `url(img/${i + 1}.jpg) center center`
+        background: `url(img/${i + 1}.jpg) center center`,
+        backgroundSize: 'cover'
       }
       return <Dummy style={style} />
     })
