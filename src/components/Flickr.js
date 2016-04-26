@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import justifiedLayout from 'justified-layout'
 import Dummy from './flickr/Dummy'
 
-class Vsti extends Component {
+class Flickr extends Component {
   render () {
     let layoutGeometry = justifiedLayout([0.5, 1.5, 1, 1.8, 0.4, 0.7, 0.9, 1.1, 1.7, 2, 2.1])
 
@@ -23,4 +23,4 @@ class Vsti extends Component {
   }
 }
 
-export default Vsti
+export default Flickr
