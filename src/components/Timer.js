@@ -17,9 +17,8 @@ class Timer extends Component {
   componentDidUpdate () {
     const { counter, resetTimer } = this.props
 
-    if (counter === 60) {
+    if (counter % 60 === 0) {
       this.sound.play()
-      resetTimer()
     }
   }
 

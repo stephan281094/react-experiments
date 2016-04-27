@@ -8,8 +8,10 @@ const initialState = {
 const timerReducer = (state = initialState, action) => {
   switch (action.type) {
     case TIMER_TICK:
+      let counter = state.counter + 1
+
       return Object.assign({}, state, {
-        counter: state.counter + 1
+        counter: counter < 60 ? counter : 0
       })
     case TIMER_RESET:
       return Object.assign({}, state, {
