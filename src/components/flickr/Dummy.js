@@ -9,7 +9,7 @@ class Dummy extends Component {
     }, this.props.style)
 
     return (
-      <div style={style}></div>
+      <img style={style} />
     )
   }
 }

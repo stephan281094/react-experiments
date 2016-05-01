@@ -31,7 +31,7 @@ describe('dummy component test', () => {
       backgroundColor: '#c00'
     }
     expect(output).toEqualJSX(
-      <div style={expectedStyle}></div>
+      <img style={expectedStyle} />
     )
   })
 })
