@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import timerReducer from './timer'
-import globalReducer from './global'
+
+import timerReducer from 'reducers/timer'
+import globalReducer from 'reducers/global'
 
 const rootReducer = combineReducers({
   timer: timerReducer,

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import justifiedLayout from 'justified-layout'
-import Dummy from './flickr/Dummy'
-import images from '../fixtures/images'
+
+import Dummy from 'components/flickr/Dummy'
+import images from 'fixtures/images'
 
 class Flickr extends Component {
   render () {

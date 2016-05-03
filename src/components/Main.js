@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Timer from './Timer'
-import Vsti from './Vsti'
-import Flickr from './Flickr'
+
+import Timer from 'components/Timer'
+import Vsti from 'components/Vsti'
+import Flickr from 'components/Flickr'
 
 class Main extends Component {
   render () {

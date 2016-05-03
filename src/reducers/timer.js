@@ -1,4 +1,4 @@
-import { TIMER_TICK, TIMER_RESET, TIMER_START, TIMER_STOP } from '../actions/timer'
+import { TIMER_TICK, TIMER_RESET, TIMER_START, TIMER_STOP } from 'actions/timer'
 
 const initialState = {
   on: false,

@@ -2,7 +2,8 @@ import expect from 'expect'
 import expectJSX from 'expect-jsx'
 import TestUtils from 'react-addons-test-utils'
 import React from 'react'
-import Dummy from '../flickr/Dummy'
+
+import Dummy from 'components/flickr/Dummy'
 
 expect.extend(expectJSX)
 

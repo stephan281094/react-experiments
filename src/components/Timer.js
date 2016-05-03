@@ -3,10 +3,10 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import Sound from '../lib/Sound'
-import Button from './timer/Button'
-import Counter from './timer/Counter'
-import { startTimer, stopTimer } from '../actions/timer'
+import Sound from 'lib/Sound'
+import Button from 'components/timer/Button'
+import Counter from 'components/timer/Counter'
+import { startTimer, stopTimer } from 'actions/timer'
 
 class Timer extends Component {
   constructor () {

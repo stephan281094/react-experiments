@@ -1,4 +1,4 @@
-import { CHANGE_VIEW } from '../actions/global'
+import { CHANGE_VIEW } from 'actions/global'
 
 const initialState = {
   activeView: 'timer'
