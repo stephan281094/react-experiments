@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Ink from 'react-ink'
 
-import { changeView } from 'actions/global'
+import { changeView } from 'reducers/global'
 
 class Header extends Component {
   setActive (item) {
